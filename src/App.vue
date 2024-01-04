@@ -5,11 +5,18 @@
 </template>
 
 <script setup>
+import 'bootstrap/dist/css/bootstrap.css'
 import CardComponent from './components/CardComponent.vue';
 
 </script>
 
 <style>
+*{
+  box-sizing: border-box !important;
+  padding:0px;
+  margin:0px;
+}
+
 body{
   background: #1a1a1a;
 }
