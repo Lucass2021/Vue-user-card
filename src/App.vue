@@ -1,11 +1,15 @@
 <template>
-    <div>
+  <div class="container">
+    <h1 class="mt-5">Our Users:</h1>
+    <div class="card-container">
       <CardComponent 
-      image="https://img.freepik.com/fotos-premium/anime-menino-homem-avatar-ai-arte-generativa_225753-7457.jpg"
-      name="Lucas Dias"
-      email="lucas.allx@hotmail.com"
+      v-for="user in userData" :key="user.id"
+      :image="user.avatar"
+      :name="`${user.first_name} ${user.last_name}`"
+      :email="user.email"
       />
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -14,7 +18,7 @@ import CardComponent from './components/CardComponent.vue';
 
 import { ref, onMounted } from "vue"
 
-let userData = ref("")
+let userData = ref({})
 
 const handleUserApiRequest = async () => {
   const req = await fetch(`https://reqres.in/api/users/`)
@@ -31,7 +35,7 @@ onMounted(() => {
 
 <style>
 *{
-  box-sizing: border-box !important;
+  box-sizing: border-box;
   padding:0px;
   margin:0px;
 }
@@ -39,11 +43,17 @@ onMounted(() => {
 body{
   background: #1a1a1a;
 }
+
+.container h1:first-child{
+  color: #fff;
+  text-align: center;
+  font-size: 3.125rem;
+}
+
+.card-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 </style>
-
-
-<!-- Data:
-https://reqres.in/api/users/
-// const data = [
-//   { id: '1', image: 'https://img.freepik.com/fotos-premium/anime-menino-homem-avatar-ai-arte-generativa_225753-7457.jpg', name: 'Nome 1', email: 'email1@example.com' },
-// ]; -->

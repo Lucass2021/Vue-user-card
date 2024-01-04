@@ -1,13 +1,9 @@
 <template>
     <div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="card">
-                    <img :src="props.image" alt="">
-                    <h1>{{ props.name }}</h1>
-                    <h2><a :href="`mailto:${props.email}`">{{ props.email }}</a></h2>
-                </div>
-            </div>
+        <div class="card">
+            <img :src="props.image" alt="">
+            <h1>{{ props.name }}</h1>
+            <h2><a :href="`mailto:${props.email}`">{{ props.email }}</a></h2>
         </div>
     </div>
 </template>
@@ -24,35 +20,31 @@ const props = defineProps({
 </script>
 
 <style scoped>
-.container .row{
-    margin: 50px 0px;
-}
 
 .card{
     background: #fff;
-    width: 300px;
-    padding:20px;
-    border-radius: 10px;
-    margin: 30px;
+    width: 18.75rem;
+    padding:1.25rem;
+    border-radius: 1.25rem;
+    margin: 1.875rem;
 }
 
 .card img{
-    max-width: 90%;
     display: flex;
     margin:0 auto;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    padding-top:10px;
+    margin-bottom: 0.625rem;
+    border-radius: 1.25rem;
+    padding-top:0.625rem;
 }
 
 .card h1{
-    font-size: 20px;
+    font-size: 1.25rem;
     text-align: center;
     margin-bottom: 0px;
 }
 
 .card h2{
-    font-size: 16px;
+    font-size: 1rem;
     text-align: center;
 }
 
@@ -63,28 +55,3 @@ const props = defineProps({
 }
 
 </style>
-
-<!-- container: {
-    backgroundColor: "#fff",
-    marginHorizontal: 30,
-    padding: 30,
-    borderRadius: 15,
-    marginVertical: 20,
-},
-image: {
-    width: "100%",
-    height: 200,
-    borderRadius: 15,
-    marginBottom: 20
-},
-fullName: {
-    fontWeight: "bold",
-    fontSize: 20,
-    textAlign: "center",
-    marginBottom: 0
-},
-email: {
-    fontSize: 16,
-    textAlign: "center",
-    marginBottom: 15
-}, -->
