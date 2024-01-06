@@ -27,7 +27,7 @@ const handleUserApiRequest = async () => {
 }
 
 onMounted(() => {
-  console.log('O componente foi montado no DOM!');
+  console.log('Running API');
   handleUserApiRequest()
 })
 
