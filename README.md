@@ -9,7 +9,7 @@
 
 ## 📝 Description
 
-> This is a simple project with the objective to practice API request in Vue.
+> This is a project with the objective to practice API request in Vue.
 ---
 
 ## 🚀 Technologies
